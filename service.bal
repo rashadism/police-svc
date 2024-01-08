@@ -10,7 +10,7 @@ configurable string ALLOWED_ORIGIN = ?;
 
 service / on new http:Listener(8080) {
 
-    resource function get offenses/[string nic_number]() returns (Offense[]|error)? {
+    resource function get offenses/[string nic_number]() returns Offense[]|error? {
         return getOffenses(nic_number);
     }
 
